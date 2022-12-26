@@ -1,0 +1,58 @@
+Row Delete
+-------------------------------------------
+<script>
+$("table").on('click', '#tdfirst', function() {
+    var currentRow = $(this).closest("tr");
+    // alert("DOE");
+    if (confirm('Are you sure ?')) {
+        $(this).remove();
+    }
+
+});
+</script>
+
+
+nested ajax
+--------------------------------------------------
+<script>
+$(document).ready(function(){
+ $("#btnsave").click(function(){   
+  let jbillno = $("#txtbno").val();
+  let jdate = $("#dtpicker").val();
+  let jcustomername = $("#cbocustomer").val();
+ 
+  let jpro_item = [];
+  let jpro_tagno = [];
+  let jpro_desc = [];
+   $('.ct1').each(function(){
+    jpro_item.push($(this).text());
+  });
+ $('.ct2').each(function(){
+    jpro_tagno.push($(this).text());
+  });
+
+    $.ajax({
+      url: "a4.php",
+      method: "GET",
+      data: {jbillno:jbillno, jpro_item:jpro_item, jpro_tagno:jpro_tagno},
+      success:function(response){
+          // alert("anbe sivam=>" + jpro_tot);
+          window.location.href='salesprintfinal2.php?billno='+jbillno+'';
+        
+      }
+  });
+
+     $.ajax({
+                url: "add_sales_data2.php",
+                method: "GET",
+                data: {jbillno:jbillno, jdate:jdate, jcustomername:jcustomername},
+                success:function(data){
+                    // alert("2ndajax");
+                   
+                }
+                });
+
+ });
+
+});
+</script>

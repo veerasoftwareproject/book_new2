@@ -1,0 +1,24 @@
+Sales:
+Cr: sales is always credit
+Dr: what comes in or sundry Debtors
+-----------------------------------------------
+Purchase:
+Cr: What goes out or sundry Creditor
+Dr: purchase is always Debit
+-----------------------------------------------
+Payment:
+Dr: Expenses or Sundry Cr name
+Cr: What goes out 
+------------------------------------------------
+Receipt:
+Dr:what comes in 
+Cr: Sundry Dr Name
+------------------------------------------------
+Sales return [opp for sales]
+-------------------------------------------------
+purchase return[opp for purchase]
+-------------------------------------------------
+Contra voucher
+Cr: what Goes out (From)
+Dr: What comes in (To)
+---------------------------------------------------

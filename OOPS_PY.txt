@@ -1,0 +1,126 @@
+Functions in Python[without return]
+
+
+
+
+Functions:
+Uses:1.code reusablity 2.developer friendly 3.easy to update
+
+Type:[with/without return, with / without parameter]
+
+		Syntax:[Function Definition]
+def functionname(para1,para2...):
+	statements
+
+		Syntax:[Function calling]
+functionname(para1,2....)
+
+---------------------------------------------
+
+		Example[add 2 numbers]
+
+Functions in Python[without return]
+
+def findtotal(a,b):
+	c=a+b
+	print(c)
+a=int(input("enter a no1:"))
+b=int(input("enter a no2:"))
+findtotal(a,b)
+
+#without return with if..else program
+def heloif(no):
+	if(no>0):
+		print("+ve no")
+	elif(no<0):
+		print("-ve no")
+	elif(no==0):
+		print("Run again Input a number < 0 or >0 only..")
+no= int(input("Enter a number"))
+heloif(no)
+
+
+#loop example using function without params
+def loophelo(no):
+	for x in range(no,2):
+		print(x,end=",")
+no=int(input("Enter a number")
+loophelo(no)
+
+
+def findtotal(a,b):
+	c=a+b
+	print(c)
+a=int(input("enter a no1:"))
+b=int(input("enter a no2:"))
+findtotal(a,b)
+------------------------------------
+def findtotal(a,b):
+	c=a+b
+	return(c)
+a=int(input("enter a no1:"))
+b=int(input("enter a no2:"))
+ans = findtotal(a,b)
+print("answer=",ans)
+------------------------------------------------
+
+
+
+
+
+
+
+class demo:
+	def findsum(self,a,b):
+		s=a+b
+		return s
+a=int(input("enter first no"))
+b=int(input("second no"))
+obj = demo()
+s = obj.findsum(a,b)
+print("ANswer=",s)
+
+--------------------
+class name = demo
+object name = obj
+function name  = findsum
+function parameter = a,b
+
+
+class demoif:
+	def findeven(self,no):
+		if(no%2==0):
+			print("Even nos")
+		else:
+			print("odd")
+no = int(input("enter a number"))
+objif = demoif()
+objif.findeven(no)
+--------------------
+class name = demoif
+object name = objif
+function name  = findeven
+function parameter = no
+
+
+
+class demorep:
+	def findsum(self,no):
+		s=0
+		for x in range(1,no+1,1):
+			s=s+x
+		return s
+no = int(input("Enter a number"))
+objrep = demorep()
+ans = objrep.findsum(no)
+print("Result:",ans)
+--------------------
+class name = demorep
+object name = objrep
+function name  = findsum
+function parameter = no
+
+
+			
+
+

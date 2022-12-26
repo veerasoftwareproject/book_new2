@@ -1,0 +1,46 @@
+<html>
+
+   <head>
+      <title>jQuery css() method</title>
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       
+      <script>
+         $(document).ready(function() {
+            $('select').on('change', function() {
+    //                 var x = document.getElementById("mySelect").selectedIndex;
+    // var y = document.getElementById("mySelect").options;
+    // alert("Index: " + y[x].index + " is " + y[x].text);
+                    if(this.value=='show'){
+                    $("#hi_one").prop("disabled",false);
+                    $("#hi_one").focus();
+                    }else if(this.value=='hide'){
+                        $("#hi_one").prop("disabled",true);
+                    }
+            });
+         });
+      </script>
+   </head>
+   
+   <body>
+   
+      <div>
+        <select id="hi">
+            <option value="hide">hide</option>
+            <option value="show">show</option>
+        </select>
+        <input type="text" id="hi_one">
+        <button id="btn" value="Hi Every">
+            Hi_every
+        </button>
+         <ol>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+            <li>list item 4</li>
+            <li>list item 5</li>
+            <li>list item 6</li>
+         </ol>
+      </div>
+       
+   </body>
+</html>
