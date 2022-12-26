@@ -1,0 +1,11 @@
+ANDROID
+------------------------
+1.SUSPECT
+	-SHOP IMAGE
+2.prospect list page
+	-follup date
+3.TRACK  
+	-Closing order list
+		title(date,name,machine make model,total followups)
+	-pending list
+		title(date,name,machine name,last followup date)

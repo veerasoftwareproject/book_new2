@@ -1,0 +1,38 @@
+github
+-------------------------------------
+usrname:helojellysoft
+jellysoftveera@gmail.com
+ganesh73lenovo!@#A
+
+
+zolahost
+veeracomputereducation@gmail.com
+jellysoftveera@gmail.com
+ganesh73!@#A
+
+
+zola
+--------------------------------------
+email:aaronsystemservice@gmail.com
+pwd:9655675163
+---------------------------------------
+dhosthas_db
+pwd:dhosth!@#A123
+Login: https://mars.clouds-servers.com:8443/
+Username: dhosthas
+Password: L1#0Rnf8A6*xOn
+Host : localhost:3306
+Database name: dhosthas_db
+User name: dhosth
+Password : ******
+
+prime
+email:jellysoftveera@gmail.com
+pwd:ganesh73
+
+
+zola host: FIle zilla
+------------------------
+usrname: dhosthas
+pwd: L1#0Rnf8A6*xOn
+host:dhosthassociation.com

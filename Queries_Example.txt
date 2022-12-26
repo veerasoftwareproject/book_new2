@@ -1,0 +1,24 @@
+SELECT DISTINCT AREA FROM tblstudent
+
+SELECT* FROM tblstudent WHERE AREA='VIRAPANDIA'
+
+
+SELECT count(AREA) FROM tblstudentHERE stid<50
+
+SELECT * FROM tblstudent WHERE AREA LIKE 'MAv%'
+
+
+
+SELECT count(AREA) FROM tblstudent WHERE AREA='VIRAPANDIA'
+
+SELECT * FROM tblstudent WHERE AREA='VIRAPANDIA' LIMIT 3
+
+
+UPDATE tblstudent set STUDENT_NAME='RAMALAXMI' WHERE stid=2
+
+SELECT * FROM tblstudent ORDER by AREA DESC
+
+
+SELECT * FROM tblstudent WHERE stid BETWEEN 10 and 20
+
+SELECT stid as 'ID NUMBER',AREA from tblstudent

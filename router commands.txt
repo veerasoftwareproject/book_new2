@@ -1,0 +1,16 @@
+Router#
+----------------------------
+Terminal Commands:
+->Click Router
+->CLI
+Router->No(continue with config)
+Router#->en
+Router(config)->configure terminal
+Router(config)->Interface gig0/0
+Router(config-if)->ip address <ipname> <subnetmask>
+Router(config-if)#->no shutdown
+Router(config-if)#->end
+Router> wr(save)
+-----------------------------
+Routing config[Terminal side]
+Router(config-if)#ip route <designationip-n/w><subnetmask><nexthope-ip>

@@ -1,0 +1,67 @@
+Comment line Syntax:
+    # message or string 
+Input statement Syntax:
+    input variable = int(input("Message or string "))
+output Statment Syntax:
+    1.print("string")
+    2.print("string1",variables1,variable2,...)
+    3.print(variable1,variable2...)
+    
+Condition statment Syntax:
+    if(condition):
+        True statements 1
+        true statements 2
+    else:
+        False statement 1 
+        false statement 2 
+        
+***************
+#add 2 numbers 
+n1=int(input("Enter no1"))
+n2=int(input("Enter no2"))
+c1 = n1+n2
+print("Sum = ",c1)
+
+***************
+#input a number find 5 divisible or not
+no1 = int(input("Enter a no"))
+if(no1%5==0):
+    print("Divisible by 5")
+else:
+    print("Not divisible by 5")
+-----------------------------------------------------------------------------------------
+while Loop Syntax:
+**********
+initial value
+while(condition):
+	True Statement1
+	Increment / Decrement 
+false statement
+
+
+For Loop Syntax:
+************
+for vari in range(initial,condition,increment):
+	True statement1
+	true statement2
+false statement
+
+
+Example:
+**********
+#1+2+3+....n
+no = int(input("Enter a number.."))
+s=0
+x=1
+while(x<=no):
+	s=s+x
+	x=x+1
+print("answer=",s)
+
+---------------------------------------------
+#1+2+3.....n using for loop
+n=int(input("Enter a number.."))
+s=0
+for x in range(1,n,1):
+	s=s+x
+print("answer=",s)

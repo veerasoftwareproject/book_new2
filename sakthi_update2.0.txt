@@ -1,0 +1,12 @@
+Updates:2.5
+------------------------
+1. stock - add new, stock list page
+brand 
+category
+
+2. people 
+Supplier - password
+
+3. AMC INVOICE - entry page,list page,
+
+4. invoice - -edit page - pay - total , pending column
