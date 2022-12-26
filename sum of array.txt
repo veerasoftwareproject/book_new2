@@ -1,0 +1,17 @@
+Input 5 numbers find sum  of arrays
+input: 20,15,29,90,55
+output: 209
+
+check method
+*****************************
+input: 
+no[5] = 20,15,29,90,55  			no -> Array Variable ,  i-> position variable 
+Calc:
+sum=0
+i=0 			i<5 	0<5(T)	sum = sum+no[0]	sum=0+20	sum=20
+i=i+1	i=0+1	i=1	i<5	1<5(T)	sum = sum+no[1]	sum=20+15	sum=35
+i=i+1	i=1+1	i=2	i<5	2<5(T)	sum = sum+no[2]	sum=35+29	sum=64
+i=i+1	i=2+1	i=3	i<5	3<5(T)	sum = sum+no[3]	sum=64+90	sum=154
+i=i+1	i=3+1	i=4	i<5	4<5(T)	sum = sum+no[4]	sum=154+55	sum=209
+i=i+1	i=4+1	i=5	i<5	5<5(F)
+print 209

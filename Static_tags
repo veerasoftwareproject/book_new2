@@ -1,0 +1,54 @@
+tags[Static,Dynamic]
+---------------------------
+
+<html>
+<body>
+tags list
+</body>
+</html>
+
+
+Display tags
+--------------------------------------
+1.h1,h2... 	- heading display
+2.div		- conatainer tags
+3.span		- display tags[icons]
+4.a href	- link tag
+5.img 		- image tag
+6.ul,li,ol	- list[Unorderlist, Orderlist]
+7.b,i,u	- bold , itali, underline
+8.p 		- paragraph tag
+Example
+----------------------------------
+<html>
+<body>
+<h1>Happy learning:)</h1>
+</body>
+</html>
+
+-----------------------------------------
+<html>
+<body>
+<h1>Happy learning:)</h1>
+<h2>Happy learning:)</h2>
+<div>Working</div>
+<span>working span tags</span>
+<b>Happy learning:)</b>
+<span>Happy learning:)</span>
+<img src="https://www.godpng.com/uploads/png/mariamman-amman-png-picture.png">
+<ul>
+<li>Bala</li>
+<li>Guru</li>
+<li>Siva</li>
+</ul>
+<ol>
+<li>Bala</li>
+<li>Guru</li>
+<li>Siva</li>
+</ol>
+<p>Paragaph tag is working..</p>
+<a href="https://www.godpng.com/uploads/png/mariamman-amman-png-picture.png"">click to see the picture</a>
+</body>
+</html>
+
+
