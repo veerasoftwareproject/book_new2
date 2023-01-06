@@ -1,0 +1,62 @@
+controller page
+
+--------------------------------------------------------
+
+public function insertfun(Request $rq){
+        $this->validate($rq,[
+            'txtnam' => 'required',
+            // 'txtph' =
+        ]);
+        $obj=new rubber;
+        $obj->stnam = $rq->txtnam;
+        $obj->save();
+        return redirect('/');
+    }
+
+
+-----------------------------------------------------
+welcome.blade.php page
+
+
+<form action="{{route('insertfun')}}" method="post">
+            {{csrf_field()}}
+                <input type="text" id="stnam" name="txtnam">
+                <button type="submit">submit</button>
+                @method('GET')
+
+---------------------------------------------------
+database migration - Table fields
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateRubbersTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('rubbers', function (Blueprint $table) {
+            $table->id();
+            $table->string('stnam');
+            // $table->string('stph');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('rubbers');
+    }
+}
+---------------------------------------------------

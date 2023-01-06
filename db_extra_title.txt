@@ -1,0 +1,10 @@
+20+queries
+subquery,
+join query,
+update table,
+update database,
+if,ifNULL
+Union
+backup query
+restore
+Database diagram

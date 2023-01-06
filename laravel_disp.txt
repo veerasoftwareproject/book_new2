@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Display data using MYSQL with Laravel</title>
+</head>
+<body>
+    page 2 is working...
+    <a href="{{ route('index') }}">Addnew</a>
+    
+<table>
+    <tr><th>Name</th>
+    <tr><th>Edit/Delete</th></tr>
+    @foreach($ctrldisp as $dis)
+<tr>
+
+                         
+        <td >{{ $dis->stnam }}</td>
+        <td> <a href="{{ route('deletefun',$dis->id) }}" >Delete</a> |||  <a href="{{ route('editfun',$dis->id) }}" >Change</a></td>
+      
+</tr>
+@endforeach     
+</table>
+</body>
+</html>
+
+
+-------------------------------------------------------
+controller function 
+
+
+public function fun3(){
+    $ctrldisp = rubber::all();
+    return view('page2',compact('ctrldisp'));
+}
+
+
+web.php
+----------------------------------------------------------
+
+Route::get('ctrldisp','RubberController@fun3')->name('ctrldisp');
