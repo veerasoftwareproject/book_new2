@@ -1,0 +1,55 @@
+Delete controller
+---------------------------------------
+
+public function fun4($id){
+    $disp = rubber::find($id)->delete();
+     return redirect(route('ctrldisp'))->with('alert','Deleted Successfully');
+}
+
+
+Delete web.php 
+----------------------------------------
+Route::get('deletefun/{id}','RubberController@fun4')->name('deletefun'); 
+
+
+
+
+update web.php 
+---------------------------------------
+
+Route::get('editfun/{id}','RubberController@editfun')->name('editfun'); 
+
+
+update controller function 
+-----------------------------------------
+
+public function editfun($id){
+        $disp = rubber::find($id);
+        return view('page1',compact('disp'));
+    }    
+
+update  form page 
+----------------------------------------- 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{{ asset('css/one.css') }}" rel="stylesheet"></link>
+    <title>Document</title>
+</head>
+<style>
+    .helo{
+        color:green;
+    }
+</style>
+<body>
+    <h1 class="helo2">Update page is working...:)</h1>
+    <form action="" id="register" class="form-horizontal form-label-left" novalidate>
+                    
+                    {{ csrf_field() }}
+            <input type="text" name="t1" id="" value="{{ $disp->stnam }}">
+            <input type="submit" value="Update here">@method('GET')
+
+</body>
+</html>
