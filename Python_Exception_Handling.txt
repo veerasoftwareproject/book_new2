@@ -1,0 +1,365 @@
+                            Python Exception Handling
+    In the last chapter, we looked at some of the built-in Exceptions in Python. We know that whenever an exception occurs in a program, the program gets terminated and an error message is displayed. This behaviour is often undesirable especially when the exception is raised due to some external factor (like due to some value entered by a user) and not due to some mistake in the code. 
+
+For example, take the following program.
+
+num1 = input("Please enter a number")
+num2 = int(num1) # will throw exception if num1 is a string
+print(num2)
+Output
+Please enter a number Hello
+
+Traceback (most recent call last):
+  File "script.py", line 2, in <module>
+    num2 = int(num1)
+ValueError: invalid literal for int() with base 10: '"Hello"'
+We know that the int() function can’t convert a string to an integer. So if the user enters a string which is assigned to num1, then int(num1) throws ValueError.
+
+As you can see, this exception was raised because the user was expected to enter a number but instead gave the wrong input. In this case the execution of the program was stopped but wouldn’t it be nice to show the user a message and continue the normal execution of the program?
+
+In such scenarios, we can check if any exception is raised and simply return a message informing the user that the input entered is incorrect without leading to the termination of the program. This handling of exceptions is called Exception Handling.
+
+Now let’s see how we can handle exceptions in Python.
+
+Python try Clause and except Clause
+try and except clauses are used to handle exceptions. The piece of code which is likely to throw an exception is placed inside the try clause. The statements which we want to execute if the code inside the try clause throws an exception are placed inside the except clause.
+
+try and catch in Python
+
+Let’s see how to use try and except clauses for handling the exception we were getting in the first example of this chapter.
+
+num1 = input("Please enter a number")
+try:
+    num2 = int(num1)
+    print(num2)
+except:
+    print("Please enter the correct input")
+print("Outside of try-except clauses. This statement is always executed.")
+Output
+Please enter a number Hello
+Please enter the correct input
+Outside of try-except clauses. This statement is always executed.
+The statements num2 = int(num1) and print(num2) are placed inside the try clause because they may throw an exception if the user enters the wrong input. The statement print("Please enter the correct input") is placed inside the except clause. 
+
+If the two statements inside the try clause don't throw any exception, then the statement inside the except clause is not executed and the rest of the program after the except clause is executed as usual.
+
+However, if a statement inside the try clause throws an exception, the control gets transferred to the except clause and the statement inside the except clause is executed. After that, the rest of the program after the except clause is executed. In the above example, the statement num2 = int(num1) inside the try clause threw an exception when the user entered a wrong value. Thus, without executing the second statement inside the try clause, the control got transferred to the except clause and "Please enter the correct input" got printed.
+
+So, now if any exception is thrown by the program, it will be handled gracefully without the termination of the program.
+
+Let’s see what happens if the user gives the correct input in the above program.
+
+num1 = input("Please enter a number")
+try:
+    num2 = int(num1)
+    print(num2)
+except:
+    print("Please enter the correct input")
+print("Outside of try-except clauses. This statement is always executed.")
+Output
+Please enter a number 5
+5
+Outside of try-except clauses. This statement is always executed.
+The user entered 5. So, the statements inside the try clause got executed without throwing any exception, and therefore the statement inside the except clause didn’t get executed.
+
+So, the syntax of try and except clauses is shown below.
+
+try:
+    # statements in try clause
+except:
+    # statements in except clause (executed when exception thrown in try clause)
+The body of the try clause constitutes of the indented statements written after try: and the body of the except clause constitutes of the indented statements written after except:.
+
+The except clause must be written immediately after the try clause.
+Look at another example.
+
+num1 = input("Please enter a number")
+try:
+    num2 = int(num1)
+    print(num2)
+except:
+    pass
+print("Outside of try-except clauses. This statement is always executed.")
+Output
+Please enter a number Hello
+Outside of try-except clauses. This statement is always executed.
+Here we wrote the statement pass in the except clause. Hence, if the try clause throws an exception, the except clause will do nothing. Passing pass in the except clause can be useful when you want to do nothing when an exception is thrown and also don’t want the program to terminate.
+
+Now let’s check different types of except clauses,
+
+Python Handling an Arbitrary Exception
+The except clause in the examples we saw above handles all types of exceptions. We can also handle all types of exception by writing except Exception: instead of except:. Let’s rewrite one of the previous examples using except Exception:.
+
+num1 = input("Please enter a number")
+try:
+    num2 = int(num1)
+    print(num2)
+except Exception:
+    print("Please enter the correct input")
+print("Outside of try-except clauses. This statement is always executed.")
+Output
+Please enter a number Hello
+Please enter the correct input
+Outside of try-except clauses. This statement is always executed.
+We got the same result.
+
+Now suppose you also want to display the exception that is thrown in the except clause. This can be done as follows.
+
+num1 = input("Please enter a number")
+try:
+    num2 = int(num1)
+    print(num2)
+except Exception as e:
+    print("Exception:", e)
+    print("Please enter the correct input")
+print("Outside of try-except clauses. This statement is always executed.")
+Output
+Please enter a number Hello
+Exception: invalid literal for int() with base 10: 'Hello'
+Please enter the correct input
+Outside of try-except clauses. This statement is always executed.
+We wrote except Exception as e: as the definition of the except clause, which means that if there is any error (exception) then it will be stored inside e in the except clause. On printing e, the exception got displayed. This can be useful when we also want to view the exception while handling it. Note that we can use any other variable in place of e.
+
+Python Handling a Specific Exception
+In the above examples, the except clause which we wrote could handle all types of exceptions. But, if we want to handle a specific type of exception, then we need to give the exception type after the except keyword. For example, to handle only ValueError, we have to define the except clause as except ValueError.
+
+This is implemented below.
+
+num1 = input("Please enter a number")
+try:
+    num2 = int(num1)
+    print(num2)
+except ValueError:
+    print("Please enter the correct input")
+print("Outside of try-except clauses. This statement is always executed.")
+Output
+Please enter a number Hello
+Please enter the correct input
+Outside of try-except clauses. This statement is always executed.
+We defined the except clause as except ValueError, which means that our except clause will only handle ValueError exceptions and will not handle any other type of exceptions. Since the try clause threw an exception of type ValueError, therefore it got handled by the except clause.
+
+This is useful when we want to handle different exceptions differently. For example, suppose we are handling a file. In that case, we would want to execute some logic if a file doesn’t exist and different logic if the file type is different.
+
+Let’s try to throw some exception which is not of type ValueError from the try clause.
+
+num1 = input("Please enter a number")
+try:
+    num2 = int(num1)
+    print(num3)
+except ValueError:
+    print("Please enter the correct input")
+print("Outside of try-except clauses. This statement is always executed.")
+Output
+Please enter a number 5
+Traceback (most recent call last):
+  File "script.py", line 4, in <module>
+    print(num3)
+NameError: name 'num3' is not defined
+Inside the try clause, we are printing the variable num3 which is not defined. Therefore, the NameError exception is thrown from the try clause. It is not handled by the except clause because it only handles ValueError exceptions, and so our program terminated with an error message.
+
+Python Handling Multiple Exceptions
+We looked at how to handle all types of exceptions or a specific exception by an except clause. Handling all types of exceptions by a single except clause is not a good idea when you want to take different actions or display different messages when different types of exceptions are thrown. For example, you might want to ask the user to enter a numeric value if ValueError is thrown or to enter a non-zero value if ZeroDivisionError is thrown.
+
+This can be done by defining multiple except clauses for a single try clause as shown below.
+
+try:
+    # statements in try clause
+
+except ValueError:
+    # handles ValueError exceptions
+
+except NameError:
+    # handles NameError exceptions
+
+except IndexError:
+    # handles IndexError exceptions
+Here we defined three except clauses, the first one handles ValueError exceptions, the second handles NameError exceptions and the third handles IndexError exceptions. Exceptions apart from these three types will not be handled. Also remember that only one except clause is executed for a try clause.
+
+Let’s see an example.
+
+num1 = input("Please enter a number")
+try:
+    num2 = int(num1)
+    num3 = 10/num2
+    print(num3)
+
+except ValueError:
+    print("Please enter a numeric value")
+
+except ZeroDivisionError:
+    print("Please enter a non-zero value")
+Output
+Please enter a number 0
+Please enter a non-zero value
+This program handles ValueError and ZeroDivisionError exceptions in separate except clauses and displays messages accordingly. We gave 0 as input and hence the statement num3 = 10/num2 threw the ZeroDivisionError exception. This exception is handled by the second except clause.
+
+We can also give an additional except clause after all the except clauses to handle all unhandled exceptions as shown below.
+
+try:
+    # statements in try clause
+
+except ValueError:
+    # handles ValueError exceptions
+
+except NameError:
+    # handles NameError exceptions
+
+except IndexError:
+    # handles IndexError exceptions
+
+except:
+    # handles all other exceptions
+Here the ValueError, NameError and IndexError exceptions are handled by the first three except clauses. The rest of the exceptions are handled by the last generic except clause.
+
+Look at the following example.
+
+num1 = input("Please enter a number")
+try:
+    num2 = int(num1)
+    num3 = 10/num2
+    print(num4)
+
+except ValueError:
+    print("Please enter a numeric value")
+	
+except ZeroDivisionError:
+    print("Please enter a non-zero value")
+
+except:
+    print("Some error occurred")
+Output
+Please enter a number 5
+Some error occurred
+Here we are printing the value of the variable num4 which is not defined. Therefore, the NameError exception is thrown. The first two except clauses don’t handle NameError exceptions and hence the last generic except clause handled it and printed a message.
+
+Now, suppose you want to perform the same task when three different types of exceptions are thrown. One way to do so is obvious - create three different except clauses, one for handling each of the three exceptions, and perform the task in their respective except clauses. Another way is to create an except clause that can handle multiple exceptions. Yes, in Python, we can also create except clauses which handle multiple exceptions as shown below.
+
+try:
+    # statements in try clause
+
+except ValueError:
+    # handles ValueError exceptions
+
+except NameError:
+    # handles NameError exceptions
+
+except (IndexError, KeyError):
+    # handles IndexError and KeyError exceptions
+
+except:
+    # handles all other exceptions
+Here the third except clause handles two types of exceptions - IndexError and KeyError. For an except clause to handle multiple exceptions, the comma separated exception types are enclosed within parentheses ( ) and written after the keyword except in the definition..
+
+Let’s see an example.
+
+num1 = input("Please enter a number")
+try:
+    num2 = int(num1)
+    num3 = 10/num2
+    print(num4)
+
+except ValueError:
+    print("Please enter a numeric value")
+
+except ZeroDivisionError:
+    print("Please enter a non-zero value")
+
+except (AttributeError, NameError):
+    print("Some error in the code!")
+
+except:
+    print("Some error occurred")
+Output
+Please enter a number 5
+Some error in the code!
+In this example, the third except clause handles AttributeError exceptions as well as NameError exceptions. The statement print(num4) in the try clause threw a NameError exception which is handled by the third except clause.
+
+So, handling exceptions is this easy. 
+
+We know that a try clause can have one or more except clauses. A try clause can also have two other clauses - else and finally. Let’s read about them.
+
+Python else Clause
+There can be some cases when we want to execute a piece of code only when the statements inside the try clause don’t throw an exception. We can place that code inside the else clause,
+
+Hence, the else clause can be thought as the opposite of except clause. The except clause is executed if an exception occurs inside the try clause, whereas the else clause is executed if no exception occurs inside the try clause.
+
+try:
+    # statements in try clause
+except:
+    # statements in except clause (executed when exception thrown in try clause)
+else:
+    # statements in else clause (executed when no exception thrown in try clause)
+else clause is written after all the except clauses.
+Look at the following example.
+
+num1 = input("Please enter a number")
+try:
+    num2 = int(num1)
+    num3 = 10/num2
+
+except ValueError:
+    print("Please enter a numeric value")
+
+except ZeroDivisionError:
+    print("Please enter a non-zero value")
+
+except:
+    print("Some error occurred")
+
+else:
+    print(num3)
+
+print("Outside of try-except clauses. This statement is always executed.")
+Output
+Please enter a number 5
+2.0
+Outside of try-except clauses. This statement is always executed.
+The statements inside the try clause got executed without throwing any error and so the statement inside the else clause got executed. Here we are printing the value of num3 only when the calculations inside the try clause don’t throw any exception. 
+
+Python finally Clause
+The finally clause is always executed after the execution of the try and except clauses. If no exception is thrown inside the try clause, then the finally clause gets executed directly after the execution of the try clause. If some exception is thrown inside the try clause, then the finally clause gets executed after the execution of the respective except clause. After the execution of the finally clause, the rest of the program is executed.
+
+We generally use the final clause to do clean-up before the execution of the rest of the program. Cleanup can be anything like assigning a default value to some variable, deleting something which we created inside the try or the except clause, closing an opened file (you will learn more about files in a later chapter). 
+
+try:
+    # statements in try clause
+except:
+    # statements in except clause (executed when exception thrown in try clause)
+else:
+    # statements in else clause (executed when no exception thrown in try clause)
+finally:
+    # statements in finally clause (always executed)
+finally clause is written after all the except clauses or the else clause (if defined).
+Let’s add a finally clause in the last example.
+
+num1 = input("Please enter a number")
+try:
+    num2 = int(num1)
+    num3 = 10/num2
+
+except ValueError:
+    print("Please enter a numeric value")
+
+except ZeroDivisionError:
+    print("Please enter a non-zero value")
+
+except:
+    print("Some error occurred")
+
+else:
+    print(num3)
+
+finally:
+    print("finally")
+
+print("Outside of try-except clauses. This statement is always executed.")
+Output
+Please enter a number 5
+2.0
+finally
+Outside of try-except clauses. This statement is always executed.
+In this example, the statement written inside the finally clause got executed after the else clause got executed.
+
+If there is no else clause, then the finally clause is executed after the try or except clause depending upon whether an exception is thrown or not. 
+
+In this chapter, we saw the different ways we can handle exceptions in Python. We can also create our own exceptions or raise built-in exceptions about which we will learn in the next chapter
