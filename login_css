@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+    background: url("media/bg5.jpg");
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}   
+
+.regform{
+    width:500px;
+    margin:250px auto;
+    padding:10px 20px 30px;
+    background-color: rgba(0,0,0,.3);
+    color:white;
+    font-size:30px;
+    border-radius:10px;
+}
+
+.regform h3{
+    text-align: center;
+    color:#E29578;
+}
+
+.regform .textlabel{
+    display:block;
+}
+
+.input input{
+    width:100%;
+    font-size:1.2em;
+    border: 1px solid #006D77;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-sizing:border-box;  /* padding pixel include width size || otherwise exclude  width size  */
+    margin:5px 0px 15px;
+}
+
+input:focus{
+    background-color: #83C5BE;
+}
+
+.btn{
+    text-align: center;
+}
+
+button{
+    background-color: #83C5BE;
+    font-size:30px;
+    color:white;
+    margin-top:20px;
+    padding:15px 25px;
+    border-radius:8px;
+    border: 1px solid #006D77;
+    box-shadow:2px;
+}
+
+.radio input{
+    accent-color: yellow;   /* radio circle filledcolor */
+     transform:scale(1.5);      /* radio circle size */
+    -ms-transform: scale(1.5);  /* fit to all browser chrome, internet explorer */
+    -webkit-transform: scale(1.5); 
+}
+</style>
+<body>
+    <div class="regform">
+        <h3>Sign Up</h3>
+        <form action="">    
+            <div class="input">
+                <label class="textlabel" for="name">User Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="input">
+                <label class="textlabel" for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="input">
+                <label class="textlabel" for="pwd">Password</label>
+                <input type="password" name="pwd" id="pwd" >
+            </div>
+            <div class="radio">
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">Female</label>
+            </div>
+            <div class="btn">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</body></html>
