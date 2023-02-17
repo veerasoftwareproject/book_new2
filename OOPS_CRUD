@@ -1,0 +1,107 @@
+OOPS [Object Oriented]
+
+
+
+Calling [class & function]  -PART I
+---------------------------------------------------
+include "dbconnect.php";    //class file -->include
+
+$object = new db_conn();    //class --> obeject create
+
+$link=$object-> connection(); // object-> function calling 
+
+
+
+Definition PART 2
+--------------------------------------------------------------
+<?php
+
+class db_conn{
+
+	public function connection()
+	{
+		$servername  ="localhost";
+	 	$username = "root";
+	 	$password = "";
+	 	$db ="sakthi";
+		$connect= mysqli_connect($servername,$username,$password,$db);
+		if($connect == false){
+			die("ERROR : Couldn't connrct".mysqli_connect_error());
+		}
+		return $connect;
+	}
+}
+?>
+
+<?php
+
+class crud{
+
+
+	public function dbconnection()
+	{
+		$servername  ="localhost";
+	 	$username = "root";
+	 	$password = "";
+	 	$db ="sakthi";
+		$connect= mysqli_connect($servername,$username,$password,$db);
+		if($connect == false){
+			die("ERROR : Couldn't connect".mysqli_connect_error());
+		}
+		return $connect;
+	}
+
+	public function hello_insert($tn,$o,$tw,$oa,$twa)
+	{
+		$link=$this-> dbconnection();
+		$res=$link->query("insert into ".$tn."(".$o.",".$tw.")values('".$oa."','".$twa."')");
+		return $res;
+	}
+
+	public function hello_delete($tn,$o,$wha)
+	{
+		$link=$this-> dbconnection();
+		echo"delete from ".$tn." where ".$o."='".$wha."' ";
+		$res=$link->query("delete from ".$tn." where ".$o."='".$wha."' ");
+		echo"deleted succesfully";
+
+		return $res;
+	}
+
+	
+
+	public function hello_display($tn,$wh,$wha)
+	{
+		$link=$this-> dbconnection();
+		$res=$link->query("select * from ".$tn." where ".$wh."='".$wha."' ");
+		$array=array();
+		while($row=mysqli_fetch_assoc($res))
+		{
+			$array[]=$row;
+			
+		}
+
+
+		// echo"select * from ".$tn." where ".$wh."='".$wha."' ";
+
+		return $array;
+	}
+
+query based functions calling using Object
+
+--------------------------------------------------
+<?php
+include "crud.php";
+
+$obj = new crud();
+
+$id=$_GET['id'];
+
+$data=$obj->displayid("tblbiller","bfname",$id);
+$ct=0;
+foreach ($data as $get) {
+$ct=$ct+1;
+echo$get['filedname'];
+echo....
+
+?> 
