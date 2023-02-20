@@ -1,0 +1,1 @@
+      window.location.href='service_report_sdata.php?s1='+reading+'&s2='+otp+'&s3='+action_taken+'&s4='+nature_complaint+'&s5='+payment+'&s6='+pay_method+'';
