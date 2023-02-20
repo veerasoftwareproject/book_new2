@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th>Sno</th>
+            <th>Image 1</th>
+            <th>Image 2</th>
+        </tr>
+        <tr>
+        <td>1.</td>
+        <td> <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/john-c-maxwell-success-quote-1523888266.jpg" width="80" </td>
+        <td> <img src="https://routinelynomadic.com/wp-content/uploads/2022/07/Success-Quotes-768x1024.jpg"  width="80"> </td>
+        </tr>
+        <tr>
+        <td>2.</td>
+        <td> <img src="https://m.media-amazon.com/images/I/61Vbivj0L0L._SY450_.jpg"  width="80" > </td>
+        <td> <img src="https://www.keepinspiring.me/wp-content/uploads/2021/04/benjamin-franklin-applause-waits-on-success-quote.png"  width="80"> </td>
+        </tr>
+        </table>
+</body>
+</html>
