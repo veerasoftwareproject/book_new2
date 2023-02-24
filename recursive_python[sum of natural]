@@ -1,0 +1,13 @@
+def find(n):
+    if x <= 1:
+        return x
+    else:
+        return x + find(n-1)
+
+num = int(input("Enter a number: "))
+print(find(num))
+print("The sum is",ttl)
+
+----------------------------------------------------------------
+Enter a number: 10
+The sum is 55
