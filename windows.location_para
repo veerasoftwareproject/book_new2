@@ -1,1 +1,8 @@
       window.location.href='service_report_sdata.php?s1='+reading+'&s2='+otp+'&s3='+action_taken+'&s4='+nature_complaint+'&s5='+payment+'&s6='+pay_method+'';
+
+      window.location.href='service_report_sdata.php?user_name='+user_name+'&model_no='+ model_no +'&service_engg='+service_engg
+      
+      header("Location:two.php");
+      
+      
+      <a href="file.php?v1=bala&v2=siva">click me</a>
