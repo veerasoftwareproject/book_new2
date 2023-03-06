@@ -1,0 +1,70 @@
+
+                                                Recursion in java
+                                                -----------------------
+Recursion in java is a process in which a method calls itself and the method that calls itself is known as a recursive method. Recursion provides a way to break complicated problems into simple smaller problems which are easier to solve.Using recursion, certain problems can be solved easily like Tower of Hanoi, fibonacci number, tree traversals etc.
+
+For beginner, recursion can be difficult to understand in the first place but once you understand it, a whole new world of programming will open for you.
+Syntax of recursive function
+return_type method_name(){  
+    //statements
+    methodname();
+} 
+
+--------------------------------------------------------------------------------------
+Java programs to find factorial of a number using recursion
+public class FactorialRecursion {
+  static int factorial(int n) {
+    System.out.println("N = " + n);
+    // recursion termination condition
+    if (n<= 1) {
+      return 1;
+    }
+    // Recursive call
+    return factorial(n - 1) * n;
+  }
+ 
+  public static void main(String[] args) {
+    int factorial5 = factorial(5);
+    System.out.println("Factorial 5 = " + factorial5);
+  }
+}
+Output
+N = 5
+N = 4
+N = 3
+N = 2
+N = 1
+Factorial 5 = 120
+
+------------------------------------------------------------------------------------------------------
+Java programs to print Nth fibonacci number using recursion
+Fibonacci sequence is the series numbers in the following integer sequence
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 ....
+the first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent term is the sum of the previous two terms. Nth term of Fibonacci series is defined by the recurrence relation:
+
+fibonacci(N) = Nth term in fibonacci series
+fibonacci(N) = fibonacci(N - 1) + fibonacci(N - 2);
+whereas, fibonacci(0) = 0 and fibonacci(1) = 1
+
+For Example :
+fibonacci(4) = fibonacci(3) + fibonacci(2);
+
+
+
+public class FibonacciRecursion {
+ 
+  static int fibonacci(int n) {
+    // Recursion termination condition
+    if(n < 2) {
+      return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
+ 
+  public static void main(String[] args) {
+    int sixthTerm = fibonacci(6);
+    System.out.println("Sixth term = " + sixthTerm);
+  }
+}
+Output
+Sixth term = 8
