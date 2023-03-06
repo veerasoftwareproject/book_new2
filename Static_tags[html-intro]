@@ -1,0 +1,52 @@
+Front End
+------------------
+1.HTML              - Structure
+2.CSS               - Style
+3.Javascript        - Behaviors
+-----------------------------
+
+
+Structure [Static / Dynamic 
+
+-------------------------
+Static Tags -   only Display
+
+Dynamic Tags- User input Tags
+
+Container Tags          -   <span> Thank you god</span>
+
+Non container Tags      -   <br>   
+                            <img src="">
+
+
+Code Editor [IDE] - COde Typ
+-----------------------------------
+1.Notepad
+2.Visual Code[VS code]   + SETTING SOFTWARE => RUNNING
+3.Sublime Text
+4.Brackets
+5.Atoms
+6.Notepad++
+7.Pycharm
+8.Spring tool suite                        
+
+
+
+Code Save method
+
+------------------------------------
+
+1.file -->Save
+2.Dot html -->save [ex]--> helo.html 
+
+
+COde Run method[output] 
+-------------------------------
+1.File -->right click 
+2.Open with --> Google chrome or internet Explorer 
+
+
+
+
+
+
