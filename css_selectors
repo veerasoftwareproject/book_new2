@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Css Selectors Example</title>
+</head>
+h1{
+    color:green;
+    
+}
+.v1{
+    color:red;
+}
+#na{
+color:blue;
+}
+<body>
+    <h1>Thank you God</h1>
+    <h1 class="v1">Class selector style code working[css]</h1>
+    <h1 id="n1">ID Selector css color completed.</h1>
+    <label>Welcome and Thank you</label> 
+    <table>
+        <tr>
+            <th>SNo</th>
+            <th>Students</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Bala</td>
+            <td>Certificate purpose</td>            
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Siva</td>
+            <td>Placement Support</td>
+        </tr>
+    </table>   
+</body>
+</html>
