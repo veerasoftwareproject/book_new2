@@ -1,0 +1,17 @@
+Ajax [Asynchronous Javascript And Xml]
+Uses:
+1.Fast Application
+2.Dynamic App functionality
+
+Syntax:
+
+$.ajax({
+url: "filename",
+method: "post",
+data: {para1:para1, para2:para2..},
+success: function(response){
+Return statements or Testing msg
+}
+});
+
+--------------------------------------------------------------
