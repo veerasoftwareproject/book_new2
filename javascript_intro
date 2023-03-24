@@ -1,0 +1,16 @@
+Uses:
+ - Data processing[Front end -->server data get, post]
+ - Data Object access[Js - CSS, HTML -->tags access with the help of javascript]
+ - Event Handling or Listener[ Click, double_click,mouse in , mouse out...etc]
+ - Animated UI[Fast application without page load -> AJax ]
+ 
+ ------------------------------------------------------------------------
+ Jquery[Javascript Library]
+ Syntax:[for all same code] --> keywords
+ $(document).ready(function(){
+  $("selector").listener(function(){
+    Statements  [ software logics]
+    });  // listener closing
+ });  // ready function closing
+ 
+ -----------------------------------------------------------------------
