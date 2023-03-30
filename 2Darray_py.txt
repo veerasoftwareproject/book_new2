@@ -1,0 +1,51 @@
+-----------------------------------------------------
+To find the sum of 2x3 matrix 
+----------------------------------------------------
+import numpy as np
+
+array1 = np.array([[1, 2],[3, 4],[5, 6]])
+
+total = np.sum(array1)
+
+print("Sum of all the elements is",total)
+
+
+-----------------------------------------------------
+To find the diagonal values  of 2x3 matrix 
+----------------------------------------------------
+n = 4
+a = [ [ 1, 2, 3, 4 ], [ 5, 6, 7, 8 ],[ 1, 2, 3, 4 ],[5,6,7,8] ]
+print("Diagonal value=")
+for i in range(n):
+	print(a[i][i], end = ", ")
+
+
+---------------------------------------------------------
+User Initialize[input 3x3 matrix print the matrix]
+---------------------------------------------------------
+n1 = int(input("Enter the number of rows:"))		#input statements[matrix row size input]
+n2 = int(input("Enter the number of columns:"))	#input statement2[matrix col size input]
+# Initialize matrix
+matrix = []
+print("Enter the entries rowwise:")			#matrix values input[full value) --> msg only
+  
+# For user input
+for i in range(n1):         
+    a =[]
+    for j in range(n2):      
+         a.append(int(input()))			# matrix value input 
+    matrix.append(a)					#matrix value 2Dimensional append
+  
+# For printing the matrix
+for i in range(n1):		
+    for j in range(n2):
+        print(matrix[i][j], end = " ")		# 2Dimensional matrix print [using 2 loop statements]
+    print()
+--------------------------------------------------------------
+Matrix Addition
+Diagonal value
+Transpose matrix
+Upper Triangle
+Searching of matrix
+sum of matrix
+count the even nos
