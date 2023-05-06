@@ -1,0 +1,72 @@
+Structure of Java
+--------------------------------------
+Headerfile
+public class classname
+{
+public static void main(String[] args)
+{
+variable declaration statement
+input statement
+assign statement
+output statement
+}
+}
+Note: All statements ends with semicolon
+-----------------------------------------------
+header file : scanner keyword
+Syntax:
+import java.util.Scanner;
+
+variable declaration
+----------------------------------------------
+syntax:
+datatype<s> vari1,vari2...;
+ex: int a,b,c;
+
+Input statement[create a object ->user input]
+------------------------------------------------
+syntax:[Object create]
+Scanner objname = new Scanner(System.in);
+Ex:
+Scanner x1 = new Scanner(System.in);
+
+syntax:[object calling]
+input variable = objectname.nextInt();	
+Note: nextFloat() - float datatype, nextChar() - string, character datatype
+Ex:
+n1 = x1.nextInt();
+n2 = x1.nextInt();
+
+
+assign statement 
+-------------------------------------------------------
+variable  = variable or expression or constant
+
+c= n1+n2
+
+
+output Statement
+-------------------------------------------------------
+Syntax:
+1.System.out.print("String");
+2.System.out.print("string1"+variable1+"string2"+variable2...);
+3.System.out.print(variable);
+
+Example Program[Input 2 number find total]
+-------------------------------------------------------
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	   int n1,n2,c;
+       Scanner x1 = new Scanner(System.in);
+       System.out.print("Input 2 number ");
+       n1 = x1.nextInt();
+       n2 = x1.nextInt();
+       c = n1+n2;
+       System.out.print("Sum = " +c);
+	}
+}
+
+----------------------------------------------------------------
