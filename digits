@@ -1,0 +1,8 @@
+#digits or not
+ch  = input("Enter any character")
+if(ch>="a" and ch<="z"):
+    print(ch ,"is alpha")
+elif(ch>='0'and ch<='9'):
+    print(ch,"is digits")
+else:
+    print(ch,"is special character")
