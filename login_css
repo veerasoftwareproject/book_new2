@@ -5,7 +5,7 @@
 </head>
 <style>
     body{
-    background: url("media/bg5.jpg");
+    background-image: linear-gradient(red, yellow, green);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }   
 
@@ -13,9 +13,9 @@
     width:500px;
     margin:250px auto;
     padding:10px 20px 30px;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0,0,0,.1);
     color:white;
-    font-size:30px;
+    font-size:1.2em;
     border-radius:10px;
 }
 
@@ -58,10 +58,10 @@ button{
 }
 
 .radio input{
-    accent-color: yellow;   /* radio circle filledcolor */
-     transform:scale(1.5);      /* radio circle size */
-    -ms-transform: scale(1.5);  /* fit to all browser chrome, internet explorer */
-    -webkit-transform: scale(1.5); 
+    accent-color: green;   /* radio circle filledcolor */
+     transform:scale(1);      /* radio circle size */
+    -ms-transform: scale(1);  /* fit to all browser chrome, internet explorer */
+    -webkit-transform: scale(1); 
 }
 </style>
 <body>
