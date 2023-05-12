@@ -1,0 +1,7 @@
+import mysql.connector
+con = mysql.connector.connect(host="localhost", user="root", passwd="",database="studentdb")
+con_qr = con.cursor()
+con_qr.execute("select * from tblstudent")
+my_data = con_qr.fetchall()
+for x in my_data:
+    print(x)
