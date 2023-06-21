@@ -1,0 +1,313 @@
+Java Checked and Unchecked Exceptions
+a. Checked Exceptions in java
+Checked Exceptions are those exceptions that the compiler checks at compile time. If there is a checked exception inside a method then the method should handle the exception or it may mention the exception by using throws keyword.
+
+b. Unchecked exceptions in java
+Unchecked exceptions are those exceptions that occur at runtime.  It completely depends on the programmer whether he or she wants to handle the exception or not. The exceptions under the Error class and the Runtime Exception class are unchecked exceptions.
+
+Java program to illustrate the use of checked and unchecked Exceptions:
+
+package com.dataflair.javaexceptions;
+import java.io. * ;
+public class CheckUnCheck {
+  public static void main(String[] args) throws IOException //This is a checked Exception
+  {
+    System.out.println("Here is an example of unchecked exception");
+    System.out.println(25 / 0);
+  }
+}
+Output:
+
+Here is an example of unchecked exception
+Exception in thread “main” java.lang.ArithmeticException: / by zero
+at CheckUnCheck.main(CheckUnCheck.java:7)
+Exception Handling in Java
+Exception handling in Java comprises of “try”, “catch” and “finally” blocks.
+
+The syntax of the exception handling in Java is as follows:
+
+try {
+  //code where exceptions may occur
+}
+catch(Exception e) {
+  //Code to handle the exception
+}
+The control flow is as follows:
+
+a. The code inside the try block gets executed first. If any exception occurs, then the control immediately shifts to the catch block. If there are statements after the line in which the exception occurs then these statements are not executed.
+
+b. After the exception gets passed as an Object of type Exception, the catch block statements get executed.
+
+Java Finally Block
+The “finally” block follows the try block or the catch block. This segment houses the code which gets executed whether an exception occurs or not. This may contain a cleanup code that you want to execute after the protected block.
+
+The syntax is as follows:
+
+finally {
+  //cleanup code
+}
+Java program to illustrate the use of the try-catch-finally block:
+
+package com.dataflair.javaexceptions;
+import java.io. * ;
+public class CheckUnCheck {
+  public static void main(String[] args) throws IOException {
+    try {
+      System.out.println(25 / 0);
+      System.out.println("This statement will never get executed because the control has shifted to the catch block. ");
+    }
+    catch(Exception e) {
+      System.out.println("You are trying to divide by zero! That is not right!");
+    }
+    finally {
+      System.out.println("This code is in the finally block. It does not depend on whether an exception occurs or not. ");
+    }
+  }
+}
+Output:
+
+You are trying to divide by zero! That is not right!
+This code is in the finally block. It does not depend on whether an exception occurs or not.
+Multiple Catch Blocks in Java
+There may be programs where there are multiple catch blocks after a try block ends. This becomes useful if the method can throw multiple types of exceptions and each exception needs a different type of handling.
+
+The syntax of this catch block is as follows:
+
+try {
+  //Code where exception can occur
+}
+catch(ExceptionTypeA e1) {
+  //code that executes if Exception of type A occurs
+}
+catch(ExceptionTypeB e2) {
+  //code that executes if Exception of type B occurs. 
+}
+The control flow transfers from the try block immediately to the first exception. If it matches the exception type mentioned in the condition, it executes the code, else it falls down the exception ladder.
+
+Java program to illustrate the concept of multiple catch blocks:
+
+package com.dataflair.javaexceptions;
+import java.io. * ;
+public class MultCatch {
+  public static void main(String[] args) throws IOException {
+    try {
+      int arr[] = {
+        1,
+        3,
+        4,
+        2,
+        45,
+        6
+      };
+      System.out.println(arr[131]);
+      System.out.println(25 / 0);
+      System.out.println("This statement will never get executed because the control has shifted to the catch block. ");
+    }
+    catch(ArithmeticException e) {
+      System.out.println("You are trying to divide by zero! That is not right!");
+    }
+    catch(ArrayIndexOutOfBoundsException e) {
+      System.out.println("You are trying to access an index not in the array!");
+    }
+    finally {
+      System.out.println("This code is in the finally block. It does not depend on whether an exception occurs or not. ");
+    }
+  }
+}
+Output:
+
+You are trying to access an index not in the array!
+This code is in the finally block. It does not depend on whether an exception occurs or not.
+Note that even though the arithmetic exception catch block is mentioned before, the control still skips that and executes the code in the ArrayIndexOutOfBoundsException block.
+
+Java try-with-resources
+When we use streams and connections in our programs it is very essential that we close them at the end of the operation. If we do not then there may be security breaches and errors. However, there are certain limitations to closing streams, such as the programmer, more often than not, forgets to close the stream which leads to errors.
+
+However, the try-with-resources also known as automatic resource management, automatically closes the stream after the operation completes.
+
+It’s syntax is:
+
+try (FileReader < objname > =new FileReader("file path")) {
+  // use thefile
+} catch() {
+  // body of catch 
+}
+}
+Java program to illustrate working with files WITHOUT try-with:
+
+package com.dataflair.javaexceptions;
+import java.io. * ;
+class TryWith {
+  public static void main(String[] args) {
+    FileReader fr = null;
+    try {
+      File file = new File("DataFlairJava.txt");
+      fr = new FileReader(file);
+      char[] a = new char[50];
+      fr.read(a); // Feed the characters to the array
+      for (char c: a)
+      System.out.print(c); //prints all the characters one by one. 
+    } catch(IOException e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        fr.close();
+      } catch(IOException ex) {
+        ex.printStackTrace();
+      }
+    }
+  }
+}
+Output:
+
+Hey there! I am learning java at DataFlair!!
+Java program to illustrate the use of try-with in the same program:
+
+package com.dataflair.javaexceptions;
+import java.io. * ;
+class TryWith {
+  public static void main(String[] args) {
+    try (FileReader fr = new FileReader("C://internshipDF//exceptionjava//DataFlairJava.txt")) {
+      char[] a = new char[50];
+      fr.read(a); // Feed the characters to the array
+      for (char c: a)
+      System.out.print(c); //prints all the characters one by one. 
+    } catch(IOException e) {
+      e.printStackTrace();
+    }
+  }
+}
+Output:
+
+Hey there! I am learning java at DataFlair!!
+throw and throws keyword in Java
+There is a frequent cause of confusion between the two keywords throws and throw. The throw keyword explicitly throws Exceptions from a method or a block of code. Generally “throw” keyword helps to throw custom exceptions.
+
+On the other hand the throws keyword is useful in case of checked exceptions. If a method performs a particular function that may result in one of the checked exceptions, the throws keyword is added after the method declaration.
+
+A single method can throw more than one exception.
+
+Custom Exceptions in Java
+You can also define your own exceptions in Java. These are custom exceptions. They are subclasses of the Exception class. This enables users to design their own exceptions adhering to that particular program.
+
+Java program to illustrate the use of custom exception:
+
+package com.dataflair.javaexceptions;
+import java.io. * ;
+class CustomException extends Exception {
+  public CustomException(String str) {
+    super(str);
+  }
+}
+public class CheckUnCheck {
+  public static void main(String[] args) throws IOException {
+    try {
+      //code which can raise custom exception
+      throw new CustomException("This is a custom Exception"); //You can inculde your own exception message
+    }
+    catch(Exception e) {
+      //TODO: handle exception
+      System.out.println(e);
+    }
+  }
+}
+Output:
+
+CustomException: This is a custom Exception
+Nested try block in Java
+Nested try blocks come into action when we need to write exception handling for specific blocks of code inside a method. They are particularly useful for handling nested code which is exception prone.
+
+Syntax:
+
+try {
+  //outer try block
+  try {
+    //inner try block
+  }
+  catch(Exception e) {
+    //inner catch block
+  }
+}
+catch(Exception e) {
+  //Outer code block. 
+}
+Java program to illustrate the use of nested try blocks:
+
+package com.dataflair.javaexceptions;
+import java.io. * ;
+public class CheckUnCheck {
+  public static void main(String[] args) throws IOException {
+    try {
+      try {
+        System.out.println("Division by zero");
+        int b = 42 / 0;
+      }
+      catch(ArithmeticException e) {
+        System.out.println(e);
+      }
+      try {
+        System.out.println("Trying to access elements not in the array");
+        int a[] = new int[10];
+        a[21]++;
+      }
+      catch(ArrayIndexOutOfBoundsException e) {
+        System.out.println(e);
+      }
+    } catch(Exception e) {
+      System.out.println("Outer try block exception is. " + e);
+    }
+  }
+}
+Output:
+
+Division by zero
+java.lang.ArithmeticException: / by zero
+Trying to access elements not in the array
+java.lang.ArrayIndexOutOfBoundsException: Index 21 out of bounds for length 10
+Useful Methods of Java Exception Handling
+There are many methods which are useful while implementing exception handling in Java:
+
+1. getMessage()- This function returns a summarized message about the exception that has occurred. It also gets initialized in the constructor of a Throwable class. The syntax of this method is public String getMessage();
+
+2. getCause()- This function returns the cause of the exception arising in the program in the form of a Throwable Object. The syntax is public Throwable getCause();
+
+3. toString()- This method returns the string which contains the name of the string appended to the exception message. The syntax is public String toString();
+
+4. printStackTrace()-This function prints the system stack trace to the error output stream.The syntax of this function is public void printStackTrace();
+
+5. getStackTrace()- This function is responsible for returning an array that contains the stack trace elements. The last element is the bottom of the stack and the first element is the top of the stack trace.
+
+6. fillinStackTrace()- This returns an object of type throwable. This object is the new stack trace of the exception. However, the older stack trace is not deleted. The syntax is public throwable fillinStackTrace();
+
+Advantages of Exception Handling in Java
+Exception handling has several advantages in programming, some of which are as follows:
+
+a. It helps to separate error-handling code from the regular code. This means that the code while debugging it is easy to identify the code which handles the error.
+
+b. This handling propagates the error up the call stack. There are certain methods that care about the error and have code to handle it and certain methods that do not. The exception handling mechanism enables the JVM to propagate the call stack and allows the method which contains code to handle the error, to do its job.
+
+c. Exception handling groups similar types of errors, and handles them inside one block. For example a program may choose to show different outputs for different exceptions.
+
+d. Exception handling helps in ordering and grouping the code for execution upon the occurrence of an exception.
+
+Best Practices of Java Exception Handling
+While implementing exception handling in a program, every programmer requires knowledge about the best practices of it. Some of them are as follows :
+
+a. Use Exception Subclasses. There are many subclasses of the Exception class which are specific to a particular kind of exception. For example under the IOException class there are EOFException, FileNotFoundException classes which help in proper identification of the exception. This helps in debugging as the error messages are available properly.
+
+b. Throw errors as soon as the exception occurs. If unhandled exceptions are present, the compiler logs the errors altogether and one has to go through the stack trace looking for the line in which the error occurred. That is why the common practice is to throw exceptions as soon as they occur.
+
+c. Catch exceptions later in the program. It is always beneficial for each method declaration to have a checked exception along with its method definition. It is common practice for developers to log the exception but, this is inappropriate because the caller method has no information about the occurrence of the Exception. Hence it is advisable to handle the error(i.e) write the catch block inside the caller method.
+
+d. Close resources in the finally block. This is because the JVM executes the try block completely as long as there is no exception occurrence. However as soon as the exception occurs, the statements after the one with the exception do not execute. Hence, the file might not close, resulting in errors. Hence it is advisable to write all the statements which involve actions that should get completed in the “finally” block.
+
+f. We should always log the exceptions that occur. This should include throwing a clear message along with the exception which would help in debugging the program.
+
+g. We should use a single catch block for multiple exceptions when there is a need for lesser code size and clean code.
+We should use custom exceptions as frequently as possible which have specific error codes. The caller program can handle these error codes. This method is better than using different exception classes.
+
+h. The name for the user-defined class should end with exception which signifies that it a class for checking and handling exceptions. The package name should also follow the same rule.
+
+i. Exceptions take up a lot of computational power and therefore programmers should always use them efficiently. An alternative to exceptions would be boolean values which can be passed at much lesser complexity.
+
+j. It is important to document the entire method and all the exceptions in it. This helps in maintaining a cleaner code. The @javadocs method documents all the exceptions in the method.
