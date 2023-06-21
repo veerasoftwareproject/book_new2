@@ -1,0 +1,23 @@
+no = int(input("Enter integer value"))
+print("Input Value=",no)
+
+
+-----------------------------------------
+
+
+no = float(input("Enter Float value"))
+print("Input Value=",no)
+
+
+
+----------------------------------------
+
+na = input("Enter String value")
+print("Input Value=",na)
+
+
+-----------------------------------------
+#Print your name 100 times
+na = input("Input Your Name ")
+for i in range(100):
+    print("No",i,":",na)
