@@ -1,0 +1,156 @@
+Example:
+
+package polymorphism;
+
+class AnimalSounds {
+
+public void Sound() {
+
+System.out.println("The animals make different sounds when asked to speak. For example:");
+
+}
+
+}
+
+class Cow extends AnimalSounds {
+
+public void Sound() {
+
+System.out.println("The cow says: moh moh");
+
+}
+
+}
+
+class cat extends AnimalSounds {
+
+public void Sound() {
+
+System.out.println("The cat says: mew mew");
+
+}
+
+}
+
+class Dog extends AnimalSounds {
+
+public void Sound() {
+
+System.out.println("The dog says: bow wow");
+
+}
+
+}
+
+public class AnimalMain {
+
+public static void main(String[] args) {
+
+AnimalSounds Animal = new AnimalSounds();
+
+AnimalSounds cow = new Cow();
+
+AnimalSounds cat = new cat();
+
+AnimalSounds Dog = new Dog();
+
+Animal.Sound();
+
+cow.Sound();
+
+cow.Sound();
+
+Dog.Sound();
+
+}
+
+}
+
+//Output:
+
+The animals make different sounds when asked to speak. For example:
+
+The cow says: moh moh
+
+The cow says: moh moh
+
+The dog says: bow wow
+
+Now that we have a better understanding of Polymorphism in Java, let us move ahead into the characteristics of Polymorphism in Java.
+
+Basics to Advanced - Learn It All!
+Caltech PGP Full Stack DevelopmentEXPLORE PROGRAMBasics to Advanced - Learn It All!
+Characteristics/Features of Polymorphism
+Following are the significant characteristics of Polymorphism in Java:
+
+The functionality of a method behaves differently in different scenarios.
+The behavior of a method depends on the data provided.
+It allows the same name for a member or method in a class with different types.
+Polymorphism supports implicit type conversion.
+Next, we will learn about the different types of Polymorphism in Java.
+
+Types of Polymorphism
+
+
+There are two different types of Polymorphism in Java. They are:
+
+Compile-Time Polymorphism
+Run-Time Polymorphism
+Compile-Time Polymorphism
+A typical Java program encounters Compile-Time Polymorphism during the compilation stage. Here, the overloading method resolution takes place in the compilation stage. There are two occurrences of Compile-Time Polymorphism, which are:
+
+Method Overloading
+Method Overloading is the process in which the class has two or more methods with the same name. Nevertheless, the implementation of a specific method occurs according to the number of parameters in the method call. 
+
+Example:
+
+//Method Overloading.
+
+package polymorphism;
+
+public class Addition {
+
+public int add(int x, int y) {
+
+return (x + y);
+
+}
+
+public double add(double d, double e, double f, double g) {
+
+return (d + e + f + g);
+
+}
+
+public double add(double a, double b) {
+
+return (a + b);
+
+}
+
+public static void main(String args[]) {
+
+Addition a = new Addition();
+
+System.out.println(a.add(25, 30));
+
+System.out.println(a.add(10.0, 15.0, 20.0, 25.0));
+
+System.out.println(a.add(127.5, 123.5));
+
+}
+
+}
+
+//Output:
+
+5555
+
+70.070.0
+
+251.0251.0
+
+Operator Overloading
+Method Overloading is a process where a class has two or more methods with the same name. Still, the implementation of the specific method takes place according to the number of parameters in the method definition.
+
+Java does not support Operator Overloading to avoid ambiguities.
