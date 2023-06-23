@@ -1,32 +1,22 @@
-Create a File
-To create a file, you can use the w mode inside the fopen() function.
-The w mode is used to write to a file. However, if the file does not exist, it will create one for you:
-Example
-FILE *fptr;
+Here is a program in C that illustrates the use of fscanf() to read a text file:
+---------------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
 
-// Create a file
-fptr = fopen("filename.txt", "w");
+printf("Welcome to DataFlair tutorials!\n\n");
 
-// Close the file
-fclose(fptr);
+char character;
+FILE *fpointer;
 
-Write To a File
-Let's use the w mode from the previous chapter again, and write something to the file we just created.
-The w mode means that the file is opened for writing. To insert content to it, you can use the fprint() function and add the pointer variable (fptr in our example) and some text:
-Example
-FILE *fptr;
-
-// Open a file in writing mode
-fptr = fopen("filename.txt", "w");
-
-// Write some text to the file
-fprintf(fptr, "Some text");
-
-// Close the file
-fclose(fptr);
-
-
-
-
-
-
+if ((fpointer = fopen("C:\\program.txt","r")) == NULL)
+{
+printf("Error! The file does not exist.");
+exit(0);
+}
+fscanf(fpointer,"%c", &character);
+printf("The character is: %c", character);
+fclose(fpointer);
+return 0;
+}
