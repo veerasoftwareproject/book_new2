@@ -1,3 +1,28 @@
+Here is a program in C that illustrates the use of fprintf() to write a text file:
+----------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+printf("Welcome to Programming Language!\n\n");
+char character;
+FILE *fpointer;
+fpointer = fopen("C:\\program.txt","w"); // Here "w" refers to write on file
+if(fpointer == NULL)
+{
+printf("Error! The file does not exist.");
+exit(0);
+}
+printf("Enter a character: ");
+scanf("%c",&character);
+fprintf(fpointer,"%c",character); // Use of fprintf() function
+fclose(fpointer);
+return 0;
+}
+
+
+
+
 Here is a program in C that illustrates the use of fscanf() to read a text file:
 ---------------------------------------------------------------------------------
 #include <stdio.h>
@@ -5,7 +30,7 @@ Here is a program in C that illustrates the use of fscanf() to read a text file:
 int main()
 {
 
-printf("Welcome to DataFlair tutorials!\n\n");
+printf("Welcome to Programming Language!\n\n");
 
 char character;
 FILE *fpointer;
@@ -17,6 +42,29 @@ exit(0);
 }
 fscanf(fpointer,"%c", &character);
 printf("The character is: %c", character);
+fclose(fpointer);
+return 0;
+}
+
+
+
+Here is a program in C that illustrates how to write in a binary file:
+---------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+char line[1000];
+FILE *fpointer;
+fpointer = fopen("char.txt", "w");
+if(fpointer == NULL)
+{
+printf("Error!");
+exit(0);
+}
+printf("Enter a statement: ");
+fgets(line,1000,stdin);
+fprintf(fpointer,"%s", line);
 fclose(fpointer);
 return 0;
 }
