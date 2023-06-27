@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <style>
+        .one{
+            width: 380px;
+            height:435px;
+            border :1px solid black;
+            margin:0 auto;
+        }
+        div{
+            padding:10px 0 10px 30px;
+        }
+        #address{
+            width:225px;
+        }
+        #email{
+            width:225px;
+        }
+        input{
+            width:112.5px;
+        }
+        #zip{
+            width:80px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+       <center><h1>Contact Details</h1></center> 
+    </div>
+    <div class="one">
+    <div>  
+        <label style="margin:-35px;">Please enter your personal details:</label>
+    </div>
+    <div>
+        <label for="name">First name:*</label>
+        <input type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="lname">Last name:*</label>
+        <input type="text" id="lname" name="lname">
+    </div>
+    <div>
+        <label for="address" style="margin:-18px;">Street address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" id="address" name="address">
+    </div>
+    <div>
+        <label for="city">&nbsp;&nbsp;Town/city:</label>
+        <input type="text" id="city" name="city">
+    </div>
+    <div>
+        <label for="zip" style="margin:-9px;">Postcode/zip:&nbsp;&nbsp;</label>
+        <input type="text" id="zip" name="zip">
+    </div>
+    <div>
+        <label for="phone" style="margin:-1px;">&nbsp;&nbsp;Telephone:</label>
+        <input type="text" id="phone" name="phone">
+    </div>
+    <div>
+        <label for="mobile" style="margin:1px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mobile:</label>
+        <input type="text" id="mobile" name="mobile">
+    </div>
+    <div>
+        <label for="email" style="margin:-23px;">Email address:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" id="email" name="email">
+    </div>
+    <div>
+       <label style="margin-left:50px;">Fields marked * are required.</label>
+    </div>
+    <div>
+        <button type="submit" style="margin-left:120px;">Submit</button>
+    </div>
+</body>
+</html>
