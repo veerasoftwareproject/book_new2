@@ -1,0 +1,6 @@
+old project
+---------------------------------
+#cd projectname[oldproject folder]
+#pip install django
+#python manage.py runserver
+---------------------------------
