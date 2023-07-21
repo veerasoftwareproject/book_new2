@@ -1,0 +1,13 @@
+SELECT * FROM tblstudent WHERE AREA='KOVILPATTI'
+
+SELECT * FROM tblstudent WHERE AREA='KOVILPATTI' LIMIT 10
+
+SELECT COUNT(stid) FROM tblstudent WHERE AREA='KOVILPATTI'
+
+SELECT * FROM tblstudent WHERE AREA LIKE 'ko%'
+
+SELECT * FROM tblstudent  WHERE AREA in('KADAMBUR T','KOVILPATTI')
+
+SELECT * FROM tblstudent WHERE stid BETWEEN  10 and 20
+
+SELECT stid as 'ID No', STUDENT_NAME as Students, mobile, AREA, DISTRICT FROM tblstudent
