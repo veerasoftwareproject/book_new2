@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="password1" required  placeholder="Must 5 character or more" passwordCheck="passwordCheck"/><div id="strength-indicator"></div>
+    DOB: <input type="date" id="dt1"><div id="date_error" style="color: red;"></div>
+    languages: Tamil<input type="checkbox" name="chkbox" value="Tamil"> &nbsp;&nbsp;English<input type="checkbox" name="chkbox" value="English">
+    Gender: <input type="radio" name="gender" value="male">&nbsp;Male &nbsp; &nbsp; <input type="radio" name="gender" value="Female">&nbsp;Female
+    <input type="button" id="btn" value="Get Data"><div id="t"></div><div id="t2"></div>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $("#dt1").mouseleave(function(){
+           var birthday = $(this).val();
+           var dob =new Date(birthday);
+           var year  = dob.getFullYear();
+           if(year>2000){
+            $("#date_error").text('Success');
+            $("#date_error").css("color","green");
+           }
+           else{
+            $("#date_error").text('Invalid  ');
+           }
+        });
+
+
+var password1 		= $('#password1'); //id of first password field
+var strength_indicator 	= $('#strength-indicator'); //id of indicator element
+
+//check password strength when user types in
+$(password1).on('keyup', function(e){
+	var pwd_strength = pw_test(password1.val());
+	switch(pwd_strength.strength){
+		case 'weak':
+			strength_indicator.removeClass().addClass('weak').html(pwd_strength.text);
+			break;
+		case 'strong':
+			strength_indicator.removeClass().addClass('strong').html(pwd_strength.text);
+			break;
+	}
+
+
+});
+
+
+//function to test password strength
+var pw_test = function(str){
+	var WeakPass = /(?=.{5,}).*/; //Must contain 5 characters or more
+	var StrongPass = /^(?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9])\S{5,}$/; //Must contain at least one upper case letter, one lower case letter and one digit.
+	
+	if(StrongPass.test(str)){
+		return {strength :'strong', text :'Strong! (Enter special chars to make even stronger'};
+    }else if(WeakPass.test(str)){
+		return {strength : 'weak', text : 'Still Weak! (Enter digits to make good password)'};
+    }
+};
+
+
+
+
+$("#btn").click(function(){
+    var allVals = [];
+   $('[name=chkbox]:checked').each(function() {
+      allVals.push($(this).val());
+   });
+   $('#t').text(allVals);
+   var gender = $("input[name='gender']:checked").val();
+   $("#t2").text(gender);
+});
+
+});
+</script>
