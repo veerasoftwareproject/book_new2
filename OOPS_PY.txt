@@ -4,15 +4,15 @@ Functions in Python[without return]
 
 
 Functions:
-Uses:1.code reusablity 2.developer friendly 3.easy to update
+Uses:1.code reusablity 2.developer friendly 3.easy to update 4.Security purpose
 
 Type:[with/without return, with / without parameter]
 
-		Syntax:[Function Definition]
+		Syntax:[Function Definition] -->above input statement
 def functionname(para1,para2...):
 	statements
 
-		Syntax:[Function calling]
+		Syntax:[Function calling]  -->below input statement
 functionname(para1,2....)
 
 ---------------------------------------------
