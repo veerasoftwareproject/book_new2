@@ -1,0 +1,26 @@
+<html>
+<style>
+h1{		<!--tag selector-->		
+color: green;
+font-size:2em;
+border:4px dashed blue;
+padding:40px;			
+}
+.col2{		<!--class selector -->
+color: green;
+font-size:2em;
+border:4px dashed red;
+padding:40px;			
+}
+#col2{		<!--id selector -->
+font-size:2em;
+border:4px dashed green;
+padding:40px;			
+}
+</style>
+<body>
+<h1>Thank you god </h1>
+<h1 class="col2">God is great</h1>
+<h1 id="col2">You can do it</h1>
+</body>
+<html>
