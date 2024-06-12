@@ -9,12 +9,10 @@ output Statment Syntax:
     
 Condition statment Syntax:
     if(condition):
-        True statements 1
-        true statements 2
+        True statements
     else:
-        False statement 1 
-        false statement 2 
-        
+        False statements
+
 ***************
 #add 2 numbers 
 n1=int(input("Enter no1"))
@@ -34,7 +32,7 @@ while Loop Syntax:
 **********
 initial value
 while(condition):
-	True Statement1
+	True Statements
 	Increment / Decrement 
 false statement
 
@@ -42,8 +40,7 @@ false statement
 For Loop Syntax:
 ************
 for vari in range(initial,condition,increment):
-	True statement1
-	true statement2
+	True statements
 false statement
 
 
