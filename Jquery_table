@@ -961,6 +961,22 @@ while($dt=mysqli_fetch_array($qr)){  $count++;?>
 </script>
 
 
+==========================AJAX TESTING====================================================
+ $.ajax({
+            url:deleteUrl,
+            type:"DELETE",
+            success:function(){
+                checkTable();
+            },
+            error:function(error){
+                // alert("Error deleting data:"+error.statusText);
+            }
+        });
+        alert("delete URL:AJAX");
+    }
+
+==========================================AJAX WITH ERROR =====================================
+
  <script>
 	$(document).ready(function(){
 		$(".btnSelect_1").click(function(){
